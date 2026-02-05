@@ -58,7 +58,9 @@ st.title("NBA High-Probability Parlay Predictor MVP")
 st.markdown("**Demo:** Uses simple ML + synthetic data. Replace with real historical training & The Odds API for live games.")
 
 # Option: Use real API (uncomment & add your key)
-API_KEY = st.text_input("The Odds API Key (optional for live games)", type="password")
+API_KEY = st.secrets.get("THE_ODDS_API_KEY", None)
+if not API_KEY:
+    st.warning("No Odds API key in secrets → demo mode only.")
 SPORT = "basketball_nba"
 REGIONS = "us"
 MARKETS = "h2h"  # moneylines
