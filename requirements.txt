@@ -1,1 +1,0 @@
-api_key = "your-the-odds-api-key-here"  # paste if you have one
